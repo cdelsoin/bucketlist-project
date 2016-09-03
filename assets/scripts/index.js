@@ -1,5 +1,7 @@
 'use strict';
 
+const authEvents = require('./auth/events.js');
+
 // user require with a reference to bundle the file and use it in this file
 // var example = require('./example');
 
@@ -7,6 +9,7 @@
 require('./example');
 
 $(() => {
+  authEvents.addHandlers();
   $('.select-sign-up').on('click', function(){
     $('.sign-up-modal').modal('show');
   });
