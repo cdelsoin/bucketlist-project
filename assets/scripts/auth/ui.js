@@ -15,8 +15,13 @@ const signInSuccess = (data) => {
   console.log(app.user);
 };
 
+const signOutSuccess = () => {
+  delete app.user;
+};
+
 module.exports = {
   success,
   failure,
   signInSuccess,
+  signOutSuccess,
 };

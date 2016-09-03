@@ -37,12 +37,22 @@ const onChangePassword = function onChangePassword(event){
     .fail(ui.failure);
 };
 
+//prevents page from refreshing and calls function from ./api
+//the function it calls from ./api deletes the token attached to the user
+const onSignOut = function onSignOut(event) {
+  event.preventDefault();
+  api.signOut()
+    .done(ui.signOutSuccess)
+    .fail(ui.failure);
+};
+
 //attach listeners to the DOM nodes set all to one variable
 //listeners call function associated with the button
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
+  $('.select-sign-out').on('click', onSignOut);
 };
 
 module.exports = {
