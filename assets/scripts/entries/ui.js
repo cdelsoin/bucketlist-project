@@ -11,6 +11,7 @@ const failure = (error) => {
 };
 
 const getEntriesSuccess = (data) => {
+  debugger;
   const showEntries = require('../templates/entries.handlebars');
   $('.entries-container').html(showEntries({
     entries: data.entries

@@ -8,7 +8,7 @@ const onGetEntries = function onGetEntries() {
   let data = getFormFields(this);
   // event.preventDefault();
   api.getEntries(data)
-    .done(ui.success)
+    .done(ui.getEntriesSuccess)
     .fail(ui.failure);
 };
 
