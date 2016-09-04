@@ -21,6 +21,13 @@ $(document).on('click','.get-show', function(){
   entriesEvents.onShowEntries(this.id);
 });
 
+$(document).on('submit','.patch-entry', function(event){
+  // debugger;
+  event.preventDefault();
+  entriesEvents.onPatchEntry(this);
+
+});
+
 $(() => {
   authEvents.addHandlers();
   entriesEvents.addHandlers();

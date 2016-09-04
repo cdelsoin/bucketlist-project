@@ -28,11 +28,13 @@ const onCreateEntry = function onCreateEntry(event) {
     .fail(ui.failure);
 };
 
-const onPatchEntry = function onPatchEntry(event) {
-  let data = getFormFields(this);
+const onPatchEntry = function onPatchEntry() {
+  // let data = getFormFields(this);
+  let isCompleted = true;
+  let id = $('.complete-entry-btn').data('id');
   debugger;
-  event.preventDefault();
-  api.patchEntry(data)
+  // event.preventDefault();
+  api.patchEntry(id, isCompleted)
     .done(ui.success)
     .fail(ui.failure);
 };
@@ -40,7 +42,6 @@ const onPatchEntry = function onPatchEntry(event) {
 
 const addHandlers = () => {
   $('.create-entry').on('submit', onCreateEntry);
-  $('.patch-entry').on('submit', onPatchEntry);
 
 };
 
@@ -48,4 +49,5 @@ module.exports = {
   addHandlers,
   onIndexEntries,
   onShowEntries,
+  onPatchEntry,
 };

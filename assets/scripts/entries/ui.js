@@ -20,6 +20,7 @@ const indexEntriesSuccess = (data) => {
 
 const showEntriesSuccess = (data) => {
   const viewShowEntries = require('../templates/show-entries.handlebars');
+  // debugger;
   $('.entries-show-container').html(viewShowEntries({
     entries: data.entries
   }));

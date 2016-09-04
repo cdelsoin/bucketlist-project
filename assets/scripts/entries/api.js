@@ -33,14 +33,18 @@ const createEntry = function (data){
   });
 };
 
-const patchEntry = function (data){
+const patchEntry = function (id, isCompleted){
   return $.ajax ({
-    url: app.api + '/entry/' + app.entry._id,
+    url: app.api + '/entries/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
-    data,
+    data: {
+      "entry": {
+        "completed": isCompleted
+      }
+    }
   });
 };
 
