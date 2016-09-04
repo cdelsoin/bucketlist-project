@@ -7,9 +7,17 @@ const authEvents = require('./auth/events.js');
 
 // use require without a reference to ensure a file is bundled
 require('./example');
+require('./entries/events');
+const entriesEvents = require('./entries/events.js');
+
+$(document).on('click','.get', function(){
+  // debugger;
+  entriesEvents.onGetEntries(this.id);
+});
 
 $(() => {
   authEvents.addHandlers();
+  entriesEvents.addHandlers();
   $('.select-sign-up').on('click', function(){
     $('.sign-up-modal').modal('show');
   });
