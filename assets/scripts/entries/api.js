@@ -48,10 +48,21 @@ const patchEntry = function (id, isCompleted){
   });
 };
 
+const deleteEntry = function (id){
+  return $.ajax ({
+    url: app.api + '/entries/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+  });
+};
+
 
 module.exports = {
   indexEntries,
   showEntries,
   createEntry,
   patchEntry,
+  deleteEntry,
 };

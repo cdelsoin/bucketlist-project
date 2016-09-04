@@ -21,11 +21,14 @@ $(document).on('click','.get-show', function(){
   entriesEvents.onShowEntries(this.id);
 });
 
-$(document).on('submit','.patch-entry', function(event){
-  // debugger;
+$(document).on('click','.complete-entry-btn', function(event){
   event.preventDefault();
   entriesEvents.onPatchEntry(this);
+});
 
+$(document).on('click','.delete-entry-btn', function(event){
+  event.preventDefault();
+  entriesEvents.onDeleteEntry(this);
 });
 
 $(() => {

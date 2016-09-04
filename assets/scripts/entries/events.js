@@ -32,9 +32,15 @@ const onPatchEntry = function onPatchEntry() {
   // let data = getFormFields(this);
   let isCompleted = true;
   let id = $('.complete-entry-btn').data('id');
-  debugger;
   // event.preventDefault();
   api.patchEntry(id, isCompleted)
+    .done(ui.success)
+    .fail(ui.failure);
+};
+
+const onDeleteEntry = function onDeleteEntry() {
+  let id = $('.delete-entry-btn').data('id');
+  api.deleteEntry(id)
     .done(ui.success)
     .fail(ui.failure);
 };
@@ -50,4 +56,5 @@ module.exports = {
   onIndexEntries,
   onShowEntries,
   onPatchEntry,
+  onDeleteEntry,
 };
