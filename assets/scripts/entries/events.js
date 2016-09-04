@@ -29,10 +29,8 @@ const onCreateEntry = function onCreateEntry(event) {
 };
 
 const onPatchEntry = function onPatchEntry() {
-  // let data = getFormFields(this);
   let isCompleted = true;
   let id = $('.complete-entry-btn').data('id');
-  // event.preventDefault();
   api.patchEntry(id, isCompleted)
     .done(ui.success)
     .fail(ui.failure);
