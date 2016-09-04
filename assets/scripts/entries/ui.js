@@ -11,9 +11,16 @@ const failure = (error) => {
 };
 
 const indexEntriesSuccess = (data) => {
-  // debugger;
-  const showEntries = require('../templates/entries.handlebars');
-  $('.entries-index-container').html(showEntries({
+  const viewIndexEntries = require('../templates/index-entries.handlebars');
+  $('.entries-index-container').html(viewIndexEntries({
+    entries: data.entries
+  }));
+  console.log(data);
+};
+
+const showEntriesSuccess = (data) => {
+  const viewShowEntries = require('../templates/show-entries.handlebars');
+  $('.entries-show-container').html(viewShowEntries({
     entries: data.entries
   }));
   console.log(data);
@@ -23,4 +30,5 @@ module.exports = {
   success,
   failure,
   indexEntriesSuccess,
+  showEntriesSuccess,
 };

@@ -17,6 +17,7 @@
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
           <li><a class="select-sign-up">Sign Up</a></li>
           <li><a class="select-sign-in">Sign In</a></li>
+          <li><a class="select-create-entry">Create New Goal</a></li>
           <li><a class="select-change-password">Change Password</a></li>
           <li class = "auth-menu"><a class="select-sign-out">Sign Out</a></li>
         </ul>
@@ -31,8 +32,12 @@
       culpa qui officia deserunt mollit anim id
       est laborum.</p>
 
+      <h3 class="get-show">Get My Entries</h3>
+      <div class="entries-show-container"></div>
+
       <h3 class="get-index">Get All Entries</h3>
       <div class="entries-index-container"></div>
+
 
       <!-- SIGN UP MODAL -->
       <div class="sign-up-modal modal fade" tabindex="-1" role="dialog">
@@ -44,7 +49,7 @@
             </div>
             <div class="modal-body">
               <form id="sign-up">
-                <input name="credentials[email]" type="text" placeholder="Your E-Mail">
+                <input name="credentials[email]" type="text" placeholder="Your Username">
                 <input name="credentials[password]" type="password" placeholder="Password">
                 <input name="submit" type="submit" class="sign-up-btn" value="Submit">
               </form>
@@ -67,7 +72,7 @@
             </div>
             <div class="modal-body">
               <form id="sign-in">
-                <input name="credentials[email]" type="text" placeholder="Your E-Mail">
+                <input name="credentials[email]" type="text" placeholder="Your Username">
                 <input name="credentials[password]" type="password" placeholder="Password">
                 <input name="submit" type="submit" class="sign-in-btn" value="Submit">
               </form>
@@ -104,5 +109,31 @@
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
     <!-- END CHANGE PASSWORD MODAL -->
+
+    <!-- CREATE ENTRY MODAL -->
+    <div class="create-entry-modal modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Create a New Goal!</h4>
+          </div>
+          <div class="modal-body">
+            <form class="create-entry">
+              <input name="entry[goal]" type="text" placeholder="What's on your bucketlist?">
+              <input name="entry[description]" type="text" placeholder="more info?">
+              <input name="entry[finishBy]" type="text" placeholder="by when?">
+              <input name="entry[location]" type="text" placeholder="location">
+              <input name="entry[url]" type="text" placeholder="any websites">
+              <input name="submit" type="submit" class="create-entry-btn" value="Submit">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- END CREATE ENTRY MODAL -->
     </body>
 </html>

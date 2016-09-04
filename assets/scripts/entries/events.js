@@ -6,17 +6,46 @@ const ui = require('./ui');
 
 const onIndexEntries = function onIndexEntries() {
   let data = getFormFields(this);
-  // event.preventDefault();
+  // event.preventDefault();  // will need preventDefault if using a submit btn
   api.indexEntries(data)
     .done(ui.indexEntriesSuccess)
     .fail(ui.failure);
 };
 
+const onShowEntries = function onShowEntries() {
+  let data = getFormFields(this);
+  // event.preventDefault();  // will need preventDefault if using a submit btn
+  api.showEntries(data)
+    .done(ui.showEntriesSuccess)
+    .fail(ui.failure);
+};
+
+const onCreateEntry = function onCreateEntry(event) {
+  let data = getFormFields(this);
+  event.preventDefault();
+  api.createEntry(data)
+    .done(ui.success)
+    .fail(ui.failure);
+};
+
+const onPatchEntry = function onPatchEntry(event) {
+  let data = getFormFields(this);
+  debugger;
+  event.preventDefault();
+  api.patchEntry(data)
+    .done(ui.success)
+    .fail(ui.failure);
+};
+
+
 const addHandlers = () => {
-  $('.get-index').on('click', onIndexEntries);
+  $('.create-entry').on('submit', onCreateEntry);
+  $('.patch-entry').on('submit', onPatchEntry);
+
 };
 
 module.exports = {
   addHandlers,
   onIndexEntries,
+  onShowEntries,
 };

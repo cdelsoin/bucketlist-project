@@ -1,0 +1,18 @@
+{{#each entries}}
+
+<div class="show-each-entry">
+
+  <h4>  {{goal}} </h4>
+  <h5> {{description}} </h5>
+  <h5> {{finishBy}} </h5>
+  <h5> {{location}} </h5>
+  <h5> {{url}} </h5>
+
+  <form class="patch-entry">
+    <input type="radio" name="entry[completed]">
+    <input name="submit" type="submit" class="complete-entry-btn" data-id={{_id}} value="I did it!">
+  </form>
+
+</div>
+
+{{/each}}
