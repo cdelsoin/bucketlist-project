@@ -2,8 +2,24 @@
 
 const app = require('../app');
 
+$.fn.clearForm = function() {
+  return this.each(function() {
+    let type = this.type, tag = this.tagName.toLowerCase();
+    if (tag === 'form')
+      {return $(':input',this).clearForm();}
+    if (type === 'text' || type === 'password' || tag === 'textarea')
+      {this.value = '';
+    }else if (type === 'checkbox' || type === 'radio'){
+      this.checked = false;
+    }else if (tag === 'select'){
+      this.selectedIndex = -1;
+  }});
+};
+
 const success = (data) => {
   console.log(data);
+  $('#change-password').clearForm();
+  $('#sign-up').clearForm();
 };
 
 const failure = (error) => {
@@ -13,6 +29,7 @@ const failure = (error) => {
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app.user);
+$('#sign-in').clearForm();
 };
 
 const signOutSuccess = () => {
