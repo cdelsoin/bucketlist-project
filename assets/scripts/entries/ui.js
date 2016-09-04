@@ -10,10 +10,10 @@ const failure = (error) => {
   console.error(error);
 };
 
-const getEntriesSuccess = (data) => {
-  debugger;
+const indexEntriesSuccess = (data) => {
+  // debugger;
   const showEntries = require('../templates/entries.handlebars');
-  $('.entries-container').html(showEntries({
+  $('.entries-index-container').html(showEntries({
     entries: data.entries
   }));
   console.log(data);
@@ -22,5 +22,5 @@ const getEntriesSuccess = (data) => {
 module.exports = {
   success,
   failure,
-  getEntriesSuccess,
+  indexEntriesSuccess,
 };

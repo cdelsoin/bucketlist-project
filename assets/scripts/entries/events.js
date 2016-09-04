@@ -4,19 +4,19 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
-const onGetEntries = function onGetEntries() {
+const onIndexEntries = function onIndexEntries() {
   let data = getFormFields(this);
   // event.preventDefault();
-  api.getEntries(data)
-    .done(ui.getEntriesSuccess)
+  api.indexEntries(data)
+    .done(ui.indexEntriesSuccess)
     .fail(ui.failure);
 };
 
 const addHandlers = () => {
-  $('.get').on('click', onGetEntries);
+  $('.get-index').on('click', onIndexEntries);
 };
 
 module.exports = {
   addHandlers,
-  onGetEntries,
+  onIndexEntries,
 };

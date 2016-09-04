@@ -2,16 +2,13 @@
 
 const app = require('../app');
 
-const getEntries = function (){
+const indexEntries = function (){
   return $.ajax({
     url: app.api + '/entries/',
     method: 'GET',
-    // headers: {
-    //   Authorization: 'Token token=' + app.user.token
-    // },
   });
 };
 
 module.exports = {
-  getEntries,
+  indexEntries,
 };

@@ -10,9 +10,9 @@ require('./example');
 require('./entries/events');
 const entriesEvents = require('./entries/events.js');
 
-$(document).on('click','.get', function(){
+$(document).on('click','.get-index', function(){
   // debugger;
-  entriesEvents.onGetEntries(this.id);
+  entriesEvents.onIndexEntries(this.id);
 });
 
 $(() => {
