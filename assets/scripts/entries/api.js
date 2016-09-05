@@ -22,7 +22,6 @@ const showEntries = function (){
 };
 
 const createEntry = function (data){
-  console.log(data);
   return $.ajax ({
     url: app.api + '/entries/',
     method: 'POST',

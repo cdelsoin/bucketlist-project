@@ -1,18 +1,34 @@
 {{#each entries}}
 
+<div class = "image-show-entry">
 <div class="show-each-entry">
 
   <h4>  {{goal}} </h4>
   <h5> {{description}} </h5>
   <h5> {{finishBy}} </h5>
   <h5> {{location}} </h5>
-  <h5> {{url}} </h5>
+  <h5><a href="{{url}}">More Info</a></h5>
 
   <form class="show-entry-form">
     <input name="submit" type="submit" class="complete-entry-btn" data-id="{{_id}}" value="I did it!">
     <input name="submit" type="submit" class="delete-entry-btn" data-id="{{_id}}" value="I gave up.. :(">
   </form>
-
+  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#circleModal">
+  More Info
+</button>
+</div>
+</div>
+<div class="modal fade" id="circleModal" tabindex="-1" role="dialog" aria-labelledby="circleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content-circle">
+        <h4 class="modal-title" id="circleModalLabel">Goal Info</h4>
+        More info Would go here about each goal
+      <div class="button-group goal-btns">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Goal complete!</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 {{/each}}

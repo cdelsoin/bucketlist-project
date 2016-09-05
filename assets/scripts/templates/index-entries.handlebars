@@ -1,14 +1,14 @@
 {{#each entries}}
 
-<div class="index-each-entry">
-
-  <h4>  {{goal}} </h4>
-  <h5> {{description}} </h5>
-  <h5> {{finishBy}} </h5>
-  <h5> {{location}} </h5>
-  <h5> {{url}} </h5>
-
-
+<div class = "image-each-entry">
+  <div class="index-each-entry">
+  <!-- <img src="../styles/images/bubbles-png-11407.png" alt="bubble-png"/ -->
+    <h4>  {{goal}} </h4>
+    <h5> {{description}} </h5>
+    <h5> {{finishBy}} </h5>
+    <h5> {{location}} </h5>
+    <h5><a href="{{url}}">More Info</a></h5>
+  </div>
 </div>
 
 {{/each}}
