@@ -2,15 +2,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'entries';
 
-$background-color: #1e668d;
-$gradient-color: #a6dbf7;
-
-
+$background-color: #75e73c;
+$gradient-color: #083616;
 
 body {
   background-image: radial-gradient(
-    $gradient-color,
-    $background-color
+    $background-color,
+      $gradient-color
     );
 }
 
