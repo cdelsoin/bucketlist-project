@@ -1,11 +1,30 @@
+// @import url('images/');
+$pure-white: #fff;
+$pure-black: #000;
+
+
+
 .index-each-entry {
-  border: 2px solid black;
+  background-image: url('images/bubbles-png-11407.png');
+  background-size: cover;
+  border: 2px solid $pure-black;
   border-radius: 10px;
+  color: $pure-white;
+  height: 345px;
   text-align: center;
+  width: 350px;
 }
 
 .show-each-entry {
-  border: 2px solid black;
+  background-image: url('images/bubbles-png-11407.png');
+  background-size: cover;
+  border: 2px solid $pure-black;
   border-radius: 10px;
+  color: $pure-white;
+  height: 345px;
   text-align: center;
+  width: 300px;
 }
+
+
+// <img src="../assets/styles/images/bubbles-png-11409.gif" alt="bubble-png"/>
