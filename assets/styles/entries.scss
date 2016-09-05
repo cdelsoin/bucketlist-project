@@ -7,22 +7,33 @@ $pure-black: #000;
 .index-each-entry {
   background-image: url('images/bubbles-png-11407.png');
   background-size: cover;
-  border: 2px solid $pure-black;
-  border-radius: 10px;
   color: $pure-white;
+  display: inline-block;
   height: 345px;
+  justify-self: center;
   order: 1;
   text-align: center;
-  width: 350px;
+  width: 345px;
+}
+
+.entries-show-container {
+  display: grid;
+  justify-content: center;
+}
+
+.entries-index-container {
+  align-items: center;
+  display: grid;
+  justify-content: center;
 }
 
 .show-each-entry {
   background-image: url('images/bubbles-png-11407.png');
   background-size: cover;
-  border: 2px solid $pure-black;
-  border-radius: 10px;
   color: $pure-white;
+  display: inline-block;
   height: 345px;
+  justify-self: center;
   order: 1;
   text-align: center;
   width: 300px;
