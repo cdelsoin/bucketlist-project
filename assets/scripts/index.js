@@ -9,7 +9,7 @@ require('./example');
 require('./entries/events');
 const authEvents = require('./auth/events.js');
 const entriesEvents = require('./entries/events');
-const uploadsEvents = require('./uploads/events');
+const app = require('./app');
 
 
 
@@ -42,7 +42,7 @@ $(() => {
   event.preventDefault();
   let data = new FormData(this);
   $.ajax({
-    url: 'http://localhost:3000/uploads',
+    url: app.api + '/uploads',
     method: 'POST',
     processData: false,
     contentType: false,
