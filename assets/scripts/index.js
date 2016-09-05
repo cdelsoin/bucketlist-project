@@ -9,6 +9,8 @@ require('./example');
 require('./entries/events');
 const authEvents = require('./auth/events.js');
 const entriesEvents = require('./entries/events');
+const uploadsEvents = require('./uploads/events');
+
 
 
 //Will display all entries on click of Get All Entries
@@ -34,8 +36,21 @@ $(document).on('click','.delete-entry-btn', function(event){
 $(() => {
   authEvents.addHandlers();
   entriesEvents.addHandlers();
-
   entriesEvents.onIndexEntries(); // Will display all entries on page ready
+
+  $('#multipart-form-data').on('submit', function(event){
+  event.preventDefault();
+  let data = new FormData(this);
+  $.ajax({
+    url: 'http://localhost:3000/uploads',
+    method: 'POST',
+    processData: false,
+    contentType: false,
+    data,
+  }).done((data) => console.log(data))
+    .fail((err) => console.error(err));
+});
+
 
   $('.select-sign-up').on('click', function(){
     $('.sign-up-modal').modal('show');
