@@ -38,18 +38,21 @@ $(() => {
   entriesEvents.addHandlers();
   entriesEvents.onIndexEntries(); // Will display all entries on page ready
 
-  $('#multipart-form-data').on('submit', function(event){
-  event.preventDefault();
-  let data = new FormData(this);
-  $.ajax({
-    url: app.api + '/uploads',
-    method: 'POST',
-    processData: false,
-    contentType: false,
-    data,
-  }).done((data) => console.log(data))
-    .fail((err) => console.error(err));
-});
+//   $('#multipart-form-data').on('submit', function(event){
+//   event.preventDefault();
+//   let data = new FormData(this);
+//   console.log('FormData', data , this);
+//   $.ajax({
+//     url: app.api + '/uploads',
+//     method: 'POST',
+//     processData: false,
+//     contentType: false,
+//     data,
+//   }).done((data) => console.log(data))
+//     // .done(console.log(data.upload.url))
+//     // .then(entriesEvents.urlPatchEntry(id, url)
+//     .fail((err) => console.error(err));
+// });
 
 
   $('.select-sign-up').on('click', function(){
