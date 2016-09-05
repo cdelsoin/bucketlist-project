@@ -11,6 +11,7 @@ $pure-black: #000;
   border-radius: 10px;
   color: $pure-white;
   height: 345px;
+  order: 1;
   text-align: center;
   width: 350px;
 }
@@ -22,8 +23,18 @@ $pure-black: #000;
   border-radius: 10px;
   color: $pure-white;
   height: 345px;
+  order: 1;
   text-align: center;
   width: 300px;
+}
+
+.modal-content-circle {
+  background-image: url('images/bubbles-png-11407.png');
+  background-size: cover;
+  border: 10px solid $pure-black;
+  border-radius: 50%;
+  height: 600px;
+  width: 600px;
 }
 
 

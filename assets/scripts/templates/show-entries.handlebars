@@ -12,6 +12,29 @@
     <input name="submit" type="submit" class="complete-entry-btn" data-id="{{_id}}" value="I did it!">
     <input name="submit" type="submit" class="delete-entry-btn" data-id="{{_id}}" value="I gave up.. :(">
   </form>
+  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#circleModal">
+  Launch demo modal for circle
+</button>
+<div class="modal fade" id="circleModal" tabindex="-1" role="dialog" aria-labelledby="circleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content-circle">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="circleModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        More info Would go here about each goal
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Goal complete!</button>
+      </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+  </div>
+</div>
 
 </div>
 
