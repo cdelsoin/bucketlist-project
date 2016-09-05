@@ -19,10 +19,11 @@ $pure-black: #000;
   display: inline-block;
   height: 170px;
   justify-self: center;
-  left: 30%;
+  left: 26%;
+  margin: 0 auto;
   position: absolute;
   text-align: center;
-  top: 20%;
+  top: 29%;
   width: 170px;
 }
 
@@ -39,7 +40,9 @@ $pure-black: #000;
 .image-show-entry {
   background-image: url('images/bubbles-png-11409.png');
   background-size: cover;
+  display: inline-block;
   height: 370px;
+  justify-self: center;
   position: relative;
   width: 370px;
 
@@ -52,7 +55,7 @@ $pure-black: #000;
   display: inline-block;
   height: 170px;
   justify-self: center;
-  left: 30%;
+  left: 27%;
   position: absolute;
   text-align: center;
   top: 20%;
@@ -62,7 +65,6 @@ $pure-black: #000;
 .modal-content-circle {
   background-image: url('images/bubbles-png-11409.png');
   background-size: cover;
-  border: 10px solid $pure-black;
   border-radius: 50%;
   height: 600px;
   width: 600px;
