@@ -31,8 +31,8 @@ const onUploadImage = function(event) {
     processData: false,
     contentType: false,
     data,
-  }).done((data) => console.log(data))
-    .fail((err) => console.error(err));
+  }).done(ui.uploadImageSuccess)
+    .fail(ui.failure);
 };
 
 const onCreateEntry = function onCreateEntry(event) {

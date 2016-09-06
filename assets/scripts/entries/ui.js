@@ -25,9 +25,14 @@ const showEntriesSuccess = (data) => {
   console.log(data);
 };
 
+const uploadImageSuccess = (data) => {
+  console.log(data);
+};
+
 module.exports = {
   success,
   failure,
   indexEntriesSuccess,
   showEntriesSuccess,
+  uploadImageSuccess,
 };
