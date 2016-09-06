@@ -29,6 +29,10 @@ $(document).on('submit','.complete-entry-form', function(event){
   entriesEvents.onPatchEntry(id);
 });
 
+// $(document).on('click', 'get-completed', function() {
+//   entriesEvents.onCompleteEntries(this.id);
+// });
+
 $(document).on('submit','.delete-entry-form', function(event){
   event.preventDefault();
   let id = $(this).data('id');
@@ -39,6 +43,7 @@ $(() => {
   authEvents.addHandlers();
   entriesEvents.addHandlers();
   entriesEvents.onIndexEntries(); // Will display all entries on page ready
+  // entriesEvents.onCompleteEntries();
 
 //   $('#multipart-form-data').on('submit', function(event){
 //   event.preventDefault();

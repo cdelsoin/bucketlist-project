@@ -45,9 +45,10 @@ const onCreateEntry = function onCreateEntry(event) {
 
 
 const onPatchEntry = function onPatchEntry(id) {
+  debugger;
   let isCompleted = true;
   api.patchEntry(id, isCompleted)
-    .done(ui.success)
+    .done(ui.patchSuccess(id))
     .fail(ui.failure);
 };
 

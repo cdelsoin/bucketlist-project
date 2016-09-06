@@ -23,6 +23,12 @@ const failure = (error) => {
   console.error(error);
 };
 
+const patchSuccess = (id) => {
+  // debugger;
+  console.log(id);
+  $('.' + id).addClass('completed-goals');
+  // debugger;
+};
 const indexEntriesSuccess = (data) => {
   const viewIndexEntries = require('../templates/index-entries.handlebars');
   $('.entries-index-container').html(viewIndexEntries({
@@ -48,5 +54,6 @@ module.exports = {
   failure,
   indexEntriesSuccess,
   showEntriesSuccess,
+  patchSuccess
   // uploadImageSuccess,
 };
