@@ -24,8 +24,9 @@ const onShowEntries = function onShowEntries() {
 const onUploadImage = function(event) {
   event.preventDefault();
   let data = new FormData(this);
+  // debugger;
   $.ajax({
-    url: app.api + '/uploads',
+    url: app.api + '/uploads/',
     method: 'POST',
     processData: false,
     contentType: false,
@@ -62,7 +63,7 @@ const onDeleteEntry = function onDeleteEntry() {
 
 const addHandlers = () => {
   $('.create-entry').on('submit', onCreateEntry);
-  $('.create-entry').on('submit', onUploadImage);
+  $('#multipart-form-data').on('submit', onUploadImage);
 
 };
 

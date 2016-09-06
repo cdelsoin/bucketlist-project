@@ -43,7 +43,7 @@ $(() => {
 //   let data = new FormData(this);
 //   console.log('FormData', data , this);
 //   $.ajax({
-//     url: app.api + '/uploads',
+//     url: app.api + '/uploads/',
 //     method: 'POST',
 //     processData: false,
 //     contentType: false,
