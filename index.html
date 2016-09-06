@@ -44,12 +44,15 @@
       <!--  -->
       <!-- END NEW NAV BAR -->
 
+
       <h1>Example</h1>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
       culpa qui officia deserunt mollit anim id
       est laborum.</p>
+
+
 
       <h3 class="get-show">Get My Entries</h3>
       <div class="entries-show-container"></div>
@@ -138,14 +141,24 @@
             <h4 class="modal-title">Create a New Goal!</h4>
           </div>
           <div class="modal-body">
-            <form class="create-entry">
+
+
+            <form id="multipart-form-data" enctype="multipart/form-data" class="create-entry">
               <input name="entry[goal]" type="text" placeholder="What's on your bucketlist?">
               <input name="entry[description]" type="text" placeholder="more info?">
               <input name="entry[finishBy]" type="text" placeholder="by when?">
               <input name="entry[location]" type="text" placeholder="location">
               <input name="entry[url]" type="text" placeholder="any websites">
+              <!-- <legend></legend>
+                <label>
+                  any related pictures?
+                  <input type="file" name="image[file]">
+                </label> -->
+
               <input name="submit" type="submit" class="create-entry-btn" value="Submit">
             </form>
+
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

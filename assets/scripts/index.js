@@ -9,6 +9,8 @@ require('./example');
 require('./entries/events');
 const authEvents = require('./auth/events.js');
 const entriesEvents = require('./entries/events');
+// const app = require('./app');
+
 
 
 //Will display all entries on click of Get All Entries
@@ -21,21 +23,39 @@ $(document).on('click','.get-show', function(){
   entriesEvents.onShowEntries(this.id);
 });
 
-$(document).on('click','.complete-entry-btn', function(event){
+$(document).on('submit','.index-entry-form', function(event){
   event.preventDefault();
-  entriesEvents.onPatchEntry(this);
+  let id = $(this).data('id');
+  entriesEvents.onPatchEntry(id);
 });
 
-$(document).on('click','.delete-entry-btn', function(event){
+$(document).on('submit','.show-entry-form', function(event){
   event.preventDefault();
-  entriesEvents.onDeleteEntry(this);
+  let id = $(this).data('id');
+  entriesEvents.onDeleteEntry(id);
 });
 
 $(() => {
   authEvents.addHandlers();
   entriesEvents.addHandlers();
-
   entriesEvents.onIndexEntries(); // Will display all entries on page ready
+
+//   $('#multipart-form-data').on('submit', function(event){
+//   event.preventDefault();
+//   let data = new FormData(this);
+//   console.log('FormData', data , this);
+//   $.ajax({
+//     url: app.api + '/uploads/',
+//     method: 'POST',
+//     processData: false,
+//     contentType: false,
+//     data,
+//   }).done((data) => console.log(data))
+//     // .done(console.log(data.upload.url))
+//     // .then(entriesEvents.urlPatchEntry(id, url)
+//     .fail((err) => console.error(err));
+// });
+
 
   $('.select-sign-up').on('click', function(){
     $('.sign-up-modal').modal('show');
