@@ -1,2 +1,27 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'entries';
+
+$background-color: #75e73c;
+$gradient-color: #083616;
+
+body {
+  background-image: radial-gradient(
+    $background-color,
+      $gradient-color
+    );
+}
+
+.menu-button {
+  cursor: default;
+  margin-right: 10px;
+  margin-top: 7px;
+}
+
+a {
+  cursor: default;
+}
+
+h1 {
+  padding-top: 5%;
+}
