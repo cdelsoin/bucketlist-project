@@ -9,7 +9,7 @@ require('./example');
 require('./entries/events');
 const authEvents = require('./auth/events.js');
 const entriesEvents = require('./entries/events');
-const app = require('./app');
+// const app = require('./app');
 
 
 
@@ -23,14 +23,16 @@ $(document).on('click','.get-show', function(){
   entriesEvents.onShowEntries(this.id);
 });
 
-$(document).on('click','.complete-entry-btn', function(event){
+$(document).on('submit','.index-entry-form', function(event){
   event.preventDefault();
-  entriesEvents.onPatchEntry(this);
+  let id = $(this).data('id');
+  entriesEvents.onPatchEntry(id);
 });
 
-$(document).on('click','.delete-entry-btn', function(event){
+$(document).on('submit','.show-entry-form', function(event){
   event.preventDefault();
-  entriesEvents.onDeleteEntry(this);
+  let id = $(this).data('id');
+  entriesEvents.onDeleteEntry(id);
 });
 
 $(() => {

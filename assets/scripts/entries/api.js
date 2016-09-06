@@ -47,21 +47,6 @@ const patchEntry = function (id, isCompleted){
   });
 };
 
-// const urlPatchEntry = function (id, url){
-//   return $.ajax ({
-//     url: app.api + '/entries/' + id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token
-//     },
-//     data: {
-//       "entry": {
-//         url
-//       }
-//     }
-//   });
-// };
-
 const deleteEntry = function (id){
   return $.ajax ({
     url: app.api + '/entries/' + id,

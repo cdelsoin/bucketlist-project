@@ -9,9 +9,9 @@
   <h5> {{location}} </h5>
   <h5><a href="{{url}}">More Info</a></h5>
 
-  <form class="show-entry-form">
-    <input name="submit" type="submit" class="complete-entry-btn" data-id="{{_id}}" value="I did it!">
-    <input name="submit" type="submit" class="delete-entry-btn" data-id="{{_id}}" value="I gave up.. :(">
+  <form class="show-entry-form" data-id="{{_id}}">
+    <input name="submit" type="submit" class="complete-entry-btn" value="I did it!">
+    <input name="submit" type="submit" class="delete-entry-btn" value="I gave up.. :(">
   </form>
   <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#circleModal">
   More Info

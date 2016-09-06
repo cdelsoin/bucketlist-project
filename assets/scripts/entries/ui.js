@@ -18,21 +18,20 @@ const indexEntriesSuccess = (data) => {
 
 const showEntriesSuccess = (data) => {
   const viewShowEntries = require('../templates/show-entries.handlebars');
-  // debugger;
   $('.entries-show-container').html(viewShowEntries({
     entries: data.entries
   }));
   console.log(data);
 };
 
-const uploadImageSuccess = (data) => {
-  console.log(data);
-};
+// const uploadImageSuccess = (data) => {
+//   console.log(data);
+// };
 
 module.exports = {
   success,
   failure,
   indexEntriesSuccess,
   showEntriesSuccess,
-  uploadImageSuccess,
+  // uploadImageSuccess,
 };
