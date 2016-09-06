@@ -30,7 +30,6 @@ const onSignIn = function (event) {
 //it is it changes the value to the new password
 const onChangePassword = function onChangePassword(event){
   let data = getFormFields(this);
-  console.log(data);
   event.preventDefault();
   api.changePassword(data)
     .done(ui.success)
