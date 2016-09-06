@@ -23,13 +23,13 @@ $(document).on('click','.get-show', function(){
   entriesEvents.onShowEntries(this.id);
 });
 
-$(document).on('submit','.index-entry-form', function(event){
+$(document).on('submit','.complete-entry-form', function(event){
   event.preventDefault();
   let id = $(this).data('id');
   entriesEvents.onPatchEntry(id);
 });
 
-$(document).on('submit','.show-entry-form', function(event){
+$(document).on('submit','.delete-entry-form', function(event){
   event.preventDefault();
   let id = $(this).data('id');
   entriesEvents.onDeleteEntry(id);
