@@ -9,6 +9,13 @@ const indexEntries = function (){
     method: 'GET',
   });
 };
+//show all completed entries
+const indexCompleteEntries = function () {
+  return $.ajax({
+    url: app.api +'/completed-entries/',
+    method: 'GET',
+  });
+};
 
 //gets all user specific entries
 const showEntries = function (){
@@ -21,16 +28,17 @@ const showEntries = function (){
   });
 };
 
-
-const completeEntires = function(){
+//gets all user specific completed entries
+const showCompleteEntries = function(){
   return $.ajax({
-    url: app.api + '/completed-entries/',
+    url: app.api + '/user-completed/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
   });
 };
+
 const createEntry = function (data){
   return $.ajax ({
     url: app.api + '/entries/',
@@ -74,5 +82,6 @@ module.exports = {
   createEntry,
   patchEntry,
   deleteEntry,
-  completeEntires
+  showCompleteEntries,
+  indexCompleteEntries
 };

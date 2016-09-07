@@ -13,6 +13,13 @@ const onIndexEntries = function onIndexEntries() {
     .fail(ui.failure);
 };
 
+const onIndexCompleteEntries = function onIndexCompleteEntries() {
+  let data = getFormFields(this);
+  api.indexCompleteEntries(data)
+  .done(ui.indexCompleteEntriesSuccess)
+  .fail(ui.failure);
+};
+
 const onShowEntries = function onShowEntries() {
   let data = getFormFields(this);
   // event.preventDefault();  // will need preventDefault if using a submit btn
@@ -21,10 +28,10 @@ const onShowEntries = function onShowEntries() {
     .fail(ui.failure);
 };
 
-const onCompleteEntries = function onCompleteEntries() {
+const onShowCompleteEntries = function onShowCompleteEntries() {
   let data = getFormFields(this);
-  api.completeEntires(data)
-    .done(ui.completeEntiresSuccess)
+  api.showCompleteEntries(data)
+    .done(ui.showEntriesCompleteSuccess)
     .fail(ui.failure);
 };
 // const onUploadImage = function(event) {
@@ -76,5 +83,6 @@ module.exports = {
   onShowEntries,
   onPatchEntry,
   onDeleteEntry,
-  onCompleteEntries
+  onShowCompleteEntries,
+  onIndexCompleteEntries
 };

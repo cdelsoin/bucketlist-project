@@ -24,10 +24,13 @@ $(document).on('click','.get-show', function(){
   entriesEvents.onShowEntries(this.id);
 });
 
-$(document).on('click', 'get-completed', function(){
-  entriesEvents.onCompleteEntries(this.id);
+$(document).on('click', 'get-all-completed', function(){
+  entriesEvents.onIndexCompleteEntries(this.id);
 });
 
+$(document).on('click', 'get-my-completed', function(){
+  entriesEvents.onShowCompleteEntries(this.id);
+});
 $(document).on('submit','.complete-entry-form', function(event){
   event.preventDefault();
   let id = $(this).data('id');

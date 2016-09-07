@@ -24,10 +24,8 @@ const failure = (error) => {
 };
 
 const patchSuccess = (id) => {
-  // debugger;
   console.log(id);
   $('.' + id).addClass('completed-goals');
-  // debugger;
 };
 const indexEntriesSuccess = (data) => {
   $('.entries-container').html('');
@@ -40,12 +38,23 @@ const indexEntriesSuccess = (data) => {
 };
 
 
-const completeEntiresSuccess = require('../templates/completed-entries.handlebars');
-  $('.entries-container').html(completeEntires({
+const indexCompleteEntiresSuccess  =(data) => {
+  $('.entries-container').html('');
+
+const viewShowCompleted= require('../templates/completed-entries.handlebars');
+  $('.entries-container').html(viewShowCompleted({
    entries: data.entries
 }));
+};
 
+const showEntriesCompleteSuccess = (data) => {
+  $('.entries-container').html('');
 
+  const showEntriesComplete =require('../templates/show-entries-complete.handlebars');
+  $('.entries-container').html(showEntriesComplete({
+    entries: data.entries
+  }));
+};
 const showEntriesSuccess = (data) => {
   $('.entries-container').html('');
 
@@ -66,6 +75,7 @@ module.exports = {
   indexEntriesSuccess,
   showEntriesSuccess,
   patchSuccess,
-  completeEntiresSuccess
+  showEntriesCompleteSuccess,
+  indexCompleteEntiresSuccess
   // uploadImageSuccess,
 };
