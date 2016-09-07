@@ -4,6 +4,7 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
+    "googleplaces": "^0.6.0",
     "jquery": "^2.2.0"
   },
   "devDependencies": {

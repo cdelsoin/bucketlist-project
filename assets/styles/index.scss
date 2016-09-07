@@ -51,3 +51,7 @@ a {
 .all-bubbles-button:hover {
   color: $hover-color;
 }
+
+.pac-container {
+  z-index: 1051 !important;
+}
