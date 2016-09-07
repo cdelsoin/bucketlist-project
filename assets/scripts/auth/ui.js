@@ -30,6 +30,8 @@ const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app.user);
 $('#sign-in').clearForm();
+$('.get-show').show();
+
 };
 
 const signOutSuccess = () => {

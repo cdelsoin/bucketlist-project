@@ -45,6 +45,9 @@ $(() => {
   entriesEvents.onIndexEntries(); // Will display all entries on page ready
   // entriesEvents.onCompleteEntries();
 
+  $('.get-show').hide();
+
+
 //   $('#multipart-form-data').on('submit', function(event){
 //   event.preventDefault();
 //   let data = new FormData(this);
