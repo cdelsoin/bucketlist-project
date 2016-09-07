@@ -28,14 +28,10 @@ $completed-gaols: #2c0eee;
   width: 170px;
 }
 
-.entries-show-container {
+.entries-container {
   display: grid;
   justify-content: center;
-}
-
-.entries-index-container {
-  display: grid;
-  justify-content: center;
+  text-align: center;
 }
 
 .image-show-entry {

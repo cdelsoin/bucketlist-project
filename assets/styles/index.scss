@@ -4,12 +4,23 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 $background-color: #75e73c;
 $gradient-color: #083616;
+$hover-color: #808080;
+$text-color: #fff;
+
+html {
+  height: 100%;
+}
 
 body {
   background-image: radial-gradient(
     $background-color,
       $gradient-color
     );
+  // height: 100%;
+}
+
+.container-fluid {
+  padding: 0;
 }
 
 .menu-button {
@@ -22,6 +33,21 @@ a {
   cursor: default;
 }
 
-h1 {
-  padding-top: 5%;
+.landing {
+  background-image: url('images/bubbles-png-11409.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: $text-color;
+  height: 100vh;
+  padding-top: 20%;
+  text-align: center;
+}
+
+.all-bubbles-button {
+  text-decoration: underline;
+}
+
+.all-bubbles-button:hover {
+  color: $hover-color;
 }
