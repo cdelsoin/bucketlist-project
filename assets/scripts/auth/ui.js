@@ -33,6 +33,7 @@ $('#sign-in').clearForm();
 };
 
 const signOutSuccess = () => {
+  $('.entries-container').html('');
   delete app.user;
 };
 
