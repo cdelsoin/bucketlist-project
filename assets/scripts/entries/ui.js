@@ -30,16 +30,20 @@ const patchSuccess = (id) => {
   // debugger;
 };
 const indexEntriesSuccess = (data) => {
+  $('.entries-container').html('');
+
   const viewIndexEntries = require('../templates/index-entries.handlebars');
-  $('.entries-index-container').html(viewIndexEntries({
+  $('.entries-container').html(viewIndexEntries({
     entries: data.entries
   }));
   console.log(data);
 };
 
 const showEntriesSuccess = (data) => {
+  $('.entries-container').html('');
+
   const viewShowEntries = require('../templates/show-entries.handlebars');
-  $('.entries-show-container').html(viewShowEntries({
+  $('.entries-container').html(viewShowEntries({
     entries: data.entries
   }));
   console.log(data);
@@ -54,6 +58,6 @@ module.exports = {
   failure,
   indexEntriesSuccess,
   showEntriesSuccess,
-  patchSuccess
+  patchSuccess,
   // uploadImageSuccess,
 };

@@ -9,6 +9,7 @@ require('./example');
 require('./entries/events');
 const authEvents = require('./auth/events.js');
 const entriesEvents = require('./entries/events');
+const viewLanding = require('./templates/landing.handlebars');
 // const app = require('./app');
 
 
@@ -42,24 +43,11 @@ $(document).on('submit','.delete-entry-form', function(event){
 $(() => {
   authEvents.addHandlers();
   entriesEvents.addHandlers();
-  entriesEvents.onIndexEntries(); // Will display all entries on page ready
+  // entriesEvents.onIndexEntries(); // Will display all entries on page ready
   // entriesEvents.onCompleteEntries();
 
-//   $('#multipart-form-data').on('submit', function(event){
-//   event.preventDefault();
-//   let data = new FormData(this);
-//   console.log('FormData', data , this);
-//   $.ajax({
-//     url: app.api + '/uploads/',
-//     method: 'POST',
-//     processData: false,
-//     contentType: false,
-//     data,
-//   }).done((data) => console.log(data))
-//     // .done(console.log(data.upload.url))
-//     // .then(entriesEvents.urlPatchEntry(id, url)
-//     .fail((err) => console.error(err));
-// });
+  $('.get-show').hide();
+  $('.entries-container').html(viewLanding());
 
 
   $('.select-sign-up').on('click', function(){
@@ -87,4 +75,20 @@ $(() => {
   $('.create-entry-btn').on('click', function(){
     $('.create-entry-modal').modal('hide');
   });
+
+  //   $('#multipart-form-data').on('submit', function(event){
+  //   event.preventDefault();
+  //   let data = new FormData(this);
+  //   console.log('FormData', data , this);
+  //   $.ajax({
+  //     url: app.api + '/uploads/',
+  //     method: 'POST',
+  //     processData: false,
+  //     contentType: false,
+  //     data,
+  //   }).done((data) => console.log(data))
+  //     // .done(console.log(data.upload.url))
+  //     // .then(entriesEvents.urlPatchEntry(id, url)
+  //     .fail((err) => console.error(err));
+  // });
 });
