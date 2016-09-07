@@ -21,6 +21,12 @@ const onShowEntries = function onShowEntries() {
     .fail(ui.failure);
 };
 
+const onCompleteEntries = function onCompleteEntries() {
+  let data = getFormFields(this);
+  api.completeEntires(data)
+    .done(ui.completeEntiresSuccess)
+    .fail(ui.failure);
+};
 // const onUploadImage = function(event) {
 //   event.preventDefault();
 //   let data = new FormData(this);
@@ -70,4 +76,5 @@ module.exports = {
   onShowEntries,
   onPatchEntry,
   onDeleteEntry,
+  onCompleteEntries
 };

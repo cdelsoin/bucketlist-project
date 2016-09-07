@@ -39,6 +39,13 @@ const indexEntriesSuccess = (data) => {
   console.log(data);
 };
 
+
+const completeEntiresSuccess = require('../templates/completed-entries.handlebars');
+  $('.entries-container').html(completeEntires({
+   entries: data.entries
+}));
+
+
 const showEntriesSuccess = (data) => {
   $('.entries-container').html('');
 
@@ -59,5 +66,6 @@ module.exports = {
   indexEntriesSuccess,
   showEntriesSuccess,
   patchSuccess,
+  completeEntiresSuccess
   // uploadImageSuccess,
 };

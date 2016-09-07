@@ -21,6 +21,16 @@ const showEntries = function (){
   });
 };
 
+
+const completeEntires = function(){
+  return $.ajax({
+    url: app.api + '/completed-entries/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+  });
+};
 const createEntry = function (data){
   return $.ajax ({
     url: app.api + '/entries/',
@@ -64,4 +74,5 @@ module.exports = {
   createEntry,
   patchEntry,
   deleteEntry,
+  completeEntires
 };
