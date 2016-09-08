@@ -3,7 +3,7 @@
 const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
-// const app = require('../app');
+const app = require('../app');
 
 const onIndexEntries = function onIndexEntries() {
   let data = getFormFields(this);
@@ -38,6 +38,18 @@ const onShowCompleteEntries = function onShowCompleteEntries() {
     .fail(ui.failure);
 };
 
+const onUploadImage = function(event) {
+  event.preventDefault();
+  let data = new FormData(this);
+  $.ajax({
+    url: app.api + '/uploads/',
+    method: 'POST',
+    processData: false,
+    contentType: false,
+    data,
+  }).done(ui.success)
+    .fail(ui.failure);
+};
 
 const onCreateEntry = function onCreateEntry(event) {
   let data = getFormFields(this);
@@ -64,7 +76,7 @@ const onDeleteEntry = function onDeleteEntry(id) {
 
 const addHandlers = () => {
   $('.create-entry').on('submit', onCreateEntry);
-  // $('#multipart-form-data').on('submit', onUploadImage);
+  $('#multipart-form-data').on('submit', onUploadImage);
 
 };
 
