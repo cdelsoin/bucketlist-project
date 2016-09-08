@@ -37,24 +37,33 @@ const indexEntriesSuccess = (data) => {
   console.log(data);
 };
 
-
-const indexCompleteEntiresSuccess  =(data) => {
+const indexCompleteEntriesSuccess = (data) => {
   $('.entries-container').html('');
 
-const viewShowCompleted= require('../templates/completed-entries.handlebars');
-  $('.entries-container').html(viewShowCompleted({
-   entries: data.entries
-}));
-};
-
-const showEntriesCompleteSuccess = (data) => {
-  $('.entries-container').html('');
-
-  const showEntriesComplete =require('../templates/show-entries-complete.handlebars');
-  $('.entries-container').html(showEntriesComplete({
+  const viewIndexCompleteEntries = require('../templates/index-completed.handlebars');
+  $('.entries-container').html(viewIndexCompleteEntries({
     entries: data.entries
   }));
+  console.log(data);
 };
+
+// const indexCompleteEntiresSuccess  =(data) => {
+//   $('.entries-container').html('');
+//
+// const viewShowCompleted= require('../templates/index-completed.handlebars');
+//   $('.entries-container').html(viewShowCompleted({
+//    entries: data.entries
+// }));
+// };
+
+// const showEntriesCompleteSuccess = (data) => {
+//   $('.entries-container').html('');
+//
+//   const showEntriesComplete =require('../templates/show-completed.handlebars');
+//   $('.entries-container').html(showEntriesComplete({
+//     entries: data.entries
+//   }));
+// };
 const showEntriesSuccess = (data) => {
   $('.entries-container').html('');
 
@@ -65,6 +74,26 @@ const showEntriesSuccess = (data) => {
   console.log(data);
 };
 
+
+// const showCompleteEntriesSuccess = (data) => {
+//   $('.entries-container').html('');
+//
+//   const viewShowCompleteEntries = require('../templates/show-completed.handlebars');
+//   $('.entries-container').html(viewShowCompleteEntries({
+//     entries: data.entries
+//   }));
+//   console.log(data);
+// };
+
+const showCompleteEntriesSuccess = (data) => {
+  $('.entries-container').html('');
+
+  const viewShowCompleteEntries = require('../templates/show-completed.handlebars');
+  $('.entries-container').html(viewShowCompleteEntries({
+    entries: data.entries
+  }));
+  console.log(data);
+};
 // const uploadImageSuccess = (data) => {
 //   console.log(data);
 // };
@@ -75,7 +104,7 @@ module.exports = {
   indexEntriesSuccess,
   showEntriesSuccess,
   patchSuccess,
-  showEntriesCompleteSuccess,
-  indexCompleteEntiresSuccess
+  showCompleteEntriesSuccess,
+  indexCompleteEntriesSuccess
   // uploadImageSuccess,
 };

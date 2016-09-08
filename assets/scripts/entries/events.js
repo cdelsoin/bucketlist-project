@@ -15,10 +15,17 @@ const onIndexEntries = function onIndexEntries() {
 
 const onIndexCompleteEntries = function onIndexCompleteEntries() {
   let data = getFormFields(this);
+  // event.preventDefault();  // will need preventDefault if using a submit btn
   api.indexCompleteEntries(data)
-  .done(ui.indexCompleteEntriesSuccess)
-  .fail(ui.failure);
+    .done(ui.indexCompleteEntriesSuccess)
+    .fail(ui.failure);
 };
+// const onIndexCompleteEntries = function onIndexCompleteEntries() {
+//   let data = getFormFields(this);
+//   api.indexCompleteEntries(data)
+//   .done(ui.indexCompleteEntriesSuccess)
+//   .fail(ui.failure);
+// };
 
 const onShowEntries = function onShowEntries() {
   let data = getFormFields(this);
@@ -27,13 +34,19 @@ const onShowEntries = function onShowEntries() {
     .done(ui.showEntriesSuccess)
     .fail(ui.failure);
 };
-
 const onShowCompleteEntries = function onShowCompleteEntries() {
   let data = getFormFields(this);
+  // event.preventDefault();  // will need preventDefault if using a submit btn
   api.showCompleteEntries(data)
-    .done(ui.showEntriesCompleteSuccess)
+    .done(ui.showCompleteEntriesSuccess)
     .fail(ui.failure);
 };
+// const onShowCompleteEntries = function onShowCompleteEntries() {
+//   let data = getFormFields(this);
+//   api.showCompleteEntries(data)
+//     .done(ui.showEntriesCompleteSuccess)
+//     .fail(ui.failure);
+// };
 // const onUploadImage = function(event) {
 //   event.preventDefault();
 //   let data = new FormData(this);
