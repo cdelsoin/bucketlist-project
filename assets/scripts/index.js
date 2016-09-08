@@ -13,7 +13,6 @@ const viewLanding = require('./templates/landing.handlebars');
 // const app = require('./app');
 
 
-
 //Will display all entries on click of Get All Entries
 $(document).on('click','.get-index', function(){
   entriesEvents.onIndexEntries(this.id);
@@ -23,6 +22,14 @@ $(document).on('click','.get-index', function(){
 $(document).on('click','.get-show', function(){
   entriesEvents.onShowEntries(this.id);
 });
+$(document).on('click','.get-all-completed', function(){
+  entriesEvents.onIndexCompleteEntries(this.id);
+});
+
+//will display all current user specific entries
+$(document).on('click','.show-my-completed', function(){
+  entriesEvents.onShowCompleteEntries(this.id);
+});
 
 $(document).on('submit','.complete-entry-form', function(event){
   event.preventDefault();
@@ -30,9 +37,6 @@ $(document).on('submit','.complete-entry-form', function(event){
   entriesEvents.onPatchEntry(id);
 });
 
-// $(document).on('click', 'get-completed', function() {
-//   entriesEvents.onCompleteEntries(this.id);
-// });
 
 $(document).on('submit','.delete-entry-form', function(event){
   event.preventDefault();
@@ -116,19 +120,4 @@ $(() => {
     $('.create-entry-modal').modal('hide');
   });
 
-  //   $('#multipart-form-data').on('submit', function(event){
-  //   event.preventDefault();
-  //   let data = new FormData(this);
-  //   console.log('FormData', data , this);
-  //   $.ajax({
-  //     url: app.api + '/uploads/',
-  //     method: 'POST',
-  //     processData: false,
-  //     contentType: false,
-  //     data,
-  //   }).done((data) => console.log(data))
-  //     // .done(console.log(data.upload.url))
-  //     // .then(entriesEvents.urlPatchEntry(id, url)
-  //     .fail((err) => console.error(err));
-  // });
 });
