@@ -27,6 +27,8 @@ const patchSuccess = (id) => {
   console.log(id);
   $('.' + id).addClass('completed-goals');
 };
+
+//launch handlebar template that displays all goals
 const indexEntriesSuccess = (data) => {
   $('.entries-container').html('');
 
@@ -37,6 +39,8 @@ const indexEntriesSuccess = (data) => {
   console.log(data);
 };
 
+
+//launch handlebar template that displays all completed goals
 const indexCompleteEntriesSuccess = (data) => {
   $('.entries-container').html('');
 
@@ -47,23 +51,7 @@ const indexCompleteEntriesSuccess = (data) => {
   console.log(data);
 };
 
-// const indexCompleteEntiresSuccess  =(data) => {
-//   $('.entries-container').html('');
-//
-// const viewShowCompleted= require('../templates/index-completed.handlebars');
-//   $('.entries-container').html(viewShowCompleted({
-//    entries: data.entries
-// }));
-// };
-
-// const showEntriesCompleteSuccess = (data) => {
-//   $('.entries-container').html('');
-//
-//   const showEntriesComplete =require('../templates/show-completed.handlebars');
-//   $('.entries-container').html(showEntriesComplete({
-//     entries: data.entries
-//   }));
-// };
+//launch handlebar template that displays current users goals
 const showEntriesSuccess = (data) => {
   $('.entries-container').html('');
 
@@ -74,17 +62,7 @@ const showEntriesSuccess = (data) => {
   console.log(data);
 };
 
-
-// const showCompleteEntriesSuccess = (data) => {
-//   $('.entries-container').html('');
-//
-//   const viewShowCompleteEntries = require('../templates/show-completed.handlebars');
-//   $('.entries-container').html(viewShowCompleteEntries({
-//     entries: data.entries
-//   }));
-//   console.log(data);
-// };
-
+//launch handlebar template that displays current users completed goals
 const showCompleteEntriesSuccess = (data) => {
   $('.entries-container').html('');
 
@@ -94,9 +72,6 @@ const showCompleteEntriesSuccess = (data) => {
   }));
   console.log(data);
 };
-// const uploadImageSuccess = (data) => {
-//   console.log(data);
-// };
 
 module.exports = {
   success,

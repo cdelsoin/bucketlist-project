@@ -9,6 +9,7 @@ const indexEntries = function (){
     method: 'GET',
   });
 };
+
 //show all completed entries
 const indexCompleteEntries = function (){
   return $.ajax({
@@ -16,12 +17,6 @@ const indexCompleteEntries = function (){
     method: 'GET',
   });
 };
-// const indexCompleteEntries = function () {
-//   return $.ajax({
-//     url: app.api +'/completed-entries/',
-//     method: 'GET',
-//   });
-// };
 
 //gets all user specific entries
 const showEntries = function (){
@@ -44,16 +39,8 @@ const showCompleteEntries = function (){
     },
   });
 };
-// const showCompleteEntries = function(){
-//   return $.ajax({
-//     url: app.api + '/user-completed/',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token
-//     },
-//   });
-// };
 
+//create a goal
 const createEntry = function (data){
   return $.ajax ({
     url: app.api + '/entries/',
@@ -65,6 +52,7 @@ const createEntry = function (data){
   });
 };
 
+//update an entry to completed
 const patchEntry = function (id, isCompleted){
   return $.ajax ({
     url: app.api + '/entries/' + id,
@@ -80,6 +68,7 @@ const patchEntry = function (id, isCompleted){
   });
 };
 
+//remove an entry
 const deleteEntry = function (id){
   return $.ajax ({
     url: app.api + '/entries/' + id,

@@ -20,12 +20,7 @@ const onIndexCompleteEntries = function onIndexCompleteEntries() {
     .done(ui.indexCompleteEntriesSuccess)
     .fail(ui.failure);
 };
-// const onIndexCompleteEntries = function onIndexCompleteEntries() {
-//   let data = getFormFields(this);
-//   api.indexCompleteEntries(data)
-//   .done(ui.indexCompleteEntriesSuccess)
-//   .fail(ui.failure);
-// };
+
 
 const onShowEntries = function onShowEntries() {
   let data = getFormFields(this);
@@ -34,6 +29,7 @@ const onShowEntries = function onShowEntries() {
     .done(ui.showEntriesSuccess)
     .fail(ui.failure);
 };
+
 const onShowCompleteEntries = function onShowCompleteEntries() {
   let data = getFormFields(this);
   // event.preventDefault();  // will need preventDefault if using a submit btn
@@ -41,24 +37,7 @@ const onShowCompleteEntries = function onShowCompleteEntries() {
     .done(ui.showCompleteEntriesSuccess)
     .fail(ui.failure);
 };
-// const onShowCompleteEntries = function onShowCompleteEntries() {
-//   let data = getFormFields(this);
-//   api.showCompleteEntries(data)
-//     .done(ui.showEntriesCompleteSuccess)
-//     .fail(ui.failure);
-// };
-// const onUploadImage = function(event) {
-//   event.preventDefault();
-//   let data = new FormData(this);
-//   $.ajax({
-//     url: app.api + '/uploads/',
-//     method: 'POST',
-//     processData: false,
-//     contentType: false,
-//     data,
-//   }).done(ui.uploadImageSuccess)
-//     .fail(ui.failure);
-// };
+
 
 const onCreateEntry = function onCreateEntry(event) {
   let data = getFormFields(this);
@@ -67,7 +46,6 @@ const onCreateEntry = function onCreateEntry(event) {
   .done(ui.success)
   .fail(ui.failure);
 };
-
 
 
 const onPatchEntry = function onPatchEntry(id) {
