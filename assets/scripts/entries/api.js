@@ -42,13 +42,22 @@ const showCompleteEntries = function (){
 
 //create a goal
 const createEntry = function (data){
+  let file = data.image.file.split('\\')[2];
   return $.ajax ({
     url: app.api + '/entries/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data,
+    data: {
+      entry: {
+        "goal": data.entry.goal,
+        "description": data.entry.description,
+        "finishBy": data.entry.finishBy,
+        "location": data.entry.location,
+        "url": file,
+      }
+    },
   });
 };
 

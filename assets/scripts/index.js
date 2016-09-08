@@ -78,9 +78,9 @@ const pac_input = document.getElementById('searchTextField');
 })(pac_input);
 
 
-$(function(){
-  const autocomplete = new google.maps.places.Autocomplete(pac_input);
-});
+// $(function(){
+//   const autocomplete = new google.maps.places.Autocomplete(pac_input);
+// });
 
 
 
