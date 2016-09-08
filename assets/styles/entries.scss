@@ -14,8 +14,43 @@ $completed-gaols: #2c0eee;
   width: 370px;
  }
 
-.index-each-entry {
+.image-completed-entry {
+  background-image: url('images/bubbles-png-11409.png');
+  background-size: cover;
+  display: inline-block;
+  height: 370px;
+  justify-self: center;
+  position: relative;
+  width: 370px;
+}
 
+.index-each-entry {
+  color: $pure-white;
+  display: inline-block;
+  height: 170px;
+  justify-self: center;
+  left: 26%;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  top: 29%;
+  width: 170px;
+}
+
+.show-completed-my {
+  color: $pure-white;
+  display: inline-block;
+  height: 170px;
+  justify-self: center;
+  left: 26%;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  top: 29%;
+  width: 170px;
+}
+
+.index-all-completed {
   color: $pure-white;
   display: inline-block;
   height: 170px;
@@ -62,8 +97,9 @@ $completed-gaols: #2c0eee;
 }
 
 .modal-content-circle {
-  background-image: url('images/bubbles-png-11409.png');
+  // background-image: url('images/bubbles-png-11409.png');
   background-size: cover;
+  // border: 4px dashed red;
   border-radius: 50%;
   height: 600px;
   width: 600px;

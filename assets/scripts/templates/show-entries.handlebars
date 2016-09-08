@@ -7,32 +7,39 @@
   <h5> {{description}} </h5>
   <h5> {{finishBy}} </h5>
   <h5> {{location}} </h5>
-  <h5> completed: {{completed}}</h5>
-  <h5><a href="{{url}}">More Info</a></h5>
 
   <form class="complete-entry-form" data-id="{{_id}}">
-    <input name="submit" type="submit" class="complete-entry-btn-sm" value="I did it!">
+    <input name="submit" type="submit" class="gray-btn complete-entry-btn-sm" value="I did it!">
   </form>
 
   <form class="delete-entry-form" data-id="{{_id}}">
-    <input name="submit" type="submit" class="delete-entry-btn-sm" value="I gave up.. :(">
+    <input name="submit" type="submit" class="gray-btn delete-entry-btn-sm" value="I gave up.. :(">
   </form>
-  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#circleModal">
-  More Info
+  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#{{_id}}">
+  View Image
 </button>
 </div>
 </div>
-<div class="modal fade" id="circleModal" tabindex="-1" role="dialog" aria-labelledby="circleModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content-circle">
-        <h4 class="modal-title" id="circleModalLabel">Goal Info</h4>
-        More info Would go here about each goal
-      <div class="button-group goal-btns">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Goal complete!</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
+<div class="modal fade {{_id}}" id="{{_id}}" tabindex="-1" role="dialog" aria-labelledby="circleModalLabel">
+        <img class="img-responsive-height" src="https://jordanallain.s3.amazonaws.com/{{url}}">
 </div>
+
+<style>
+  .gray-btn {
+    color: #000;
+  }
+
+  img {
+    min-width: 20px !important;
+  }
+
+  .img-responsive-height
+  {
+    display: block;
+    width: auto;
+    max-height: 60%;
+    margin: 50px auto;
+  }
+</style>
 
 {{/each}}

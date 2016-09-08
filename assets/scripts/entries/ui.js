@@ -24,11 +24,11 @@ const failure = (error) => {
 };
 
 const patchSuccess = (id) => {
-  // debugger;
   console.log(id);
   $('.' + id).addClass('completed-goals');
-  // debugger;
 };
+
+//launch handlebar template that displays all goals
 const indexEntriesSuccess = (data) => {
   $('.entries-container').html('');
 
@@ -39,6 +39,19 @@ const indexEntriesSuccess = (data) => {
   console.log(data);
 };
 
+
+//launch handlebar template that displays all completed goals
+const indexCompleteEntriesSuccess = (data) => {
+  $('.entries-container').html('');
+
+  const viewIndexCompleteEntries = require('../templates/index-completed.handlebars');
+  $('.entries-container').html(viewIndexCompleteEntries({
+    entries: data.entries
+  }));
+  console.log(data);
+};
+
+//launch handlebar template that displays current users goals
 const showEntriesSuccess = (data) => {
   $('.entries-container').html('');
 
@@ -49,9 +62,16 @@ const showEntriesSuccess = (data) => {
   console.log(data);
 };
 
-// const uploadImageSuccess = (data) => {
-//   console.log(data);
-// };
+//launch handlebar template that displays current users completed goals
+const showCompleteEntriesSuccess = (data) => {
+  $('.entries-container').html('');
+
+  const viewShowCompleteEntries = require('../templates/show-completed.handlebars');
+  $('.entries-container').html(viewShowCompleteEntries({
+    entries: data.entries
+  }));
+  console.log(data);
+};
 
 module.exports = {
   success,
@@ -59,5 +79,8 @@ module.exports = {
   indexEntriesSuccess,
   showEntriesSuccess,
   patchSuccess,
+  showCompleteEntriesSuccess,
+  indexCompleteEntriesSuccess
   // uploadImageSuccess,
+
 };

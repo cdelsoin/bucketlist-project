@@ -1,0 +1,38 @@
+{{#each entries}}
+
+<div class = "image-completed-entry {{_id}}">
+  <div class="show-completed-my">
+    <h4>  {{goal}} </h4>
+    <h5> {{description}} </h5>
+    <h5> {{finishBy}} </h5>
+    <h5> {{location}} </h5>
+      <form class="delete-entry-form" data-id="{{_id}}">
+        <input name="submit" type="submit" class="gray-btn delete-entry-btn-sm" value="Remove">
+      </form>
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#{{_id}}">
+      View Image
+    </button>
+    <div class="modal fade {{_id}}" id="{{_id}}" tabindex="-1" role="dialog" aria-labelledby="circleModalLabel">
+            <img class="img-responsive-height" src="https://jordanallain.s3.amazonaws.com/{{url}}">
+    </div>
+    </div>
+  </div>
+
+  <style>
+    .gray-btn {
+      color: #000;
+    }
+
+    img {
+      min-width: 20px !important;
+    }
+
+    .img-responsive-height
+    {
+      display: block;
+      width: auto;
+      max-height: 60%;
+      margin: 50px auto;
+    }
+  </style>
+{{/each}}

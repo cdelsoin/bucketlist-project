@@ -2,12 +2,36 @@
 
 <div class = "image-each-entry">
   <div class="index-each-entry">
-  <!-- <img src="../styles/images/bubbles-png-11407.png" alt="bubble-png"/ -->
     <h4>  {{goal}} </h4>
     <h5> {{description}} </h5>
     <h5> {{finishBy}} </h5>
     <h5> {{location}} </h5>
-    <h5><a href="{{url}}">More Info</a></h5>
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#{{_id}}">
+    View Image
+  </button>
+  </div>
+  </div>
+  <div class="modal fade {{_id}}" id="{{_id}}" tabindex="-1" role="dialog" aria-labelledby="circleModalLabel">
+          <img class="img-responsive-height" src="https://jordanallain.s3.amazonaws.com/{{url}}">
+  </div>
+
+  <style>
+    .gray-btn {
+      color: #000;
+    }
+
+    img {
+      min-width: 20px !important;
+    }
+
+    .img-responsive-height
+    {
+      display: block;
+      width: auto;
+      max-height: 60%;
+      margin: 50px auto;
+    }
+  </style>
   </div>
 </div>
 
