@@ -31,6 +31,8 @@ const signInSuccess = (data) => {
   console.log(app.user);
 $('#sign-in').clearForm();
 $('.get-show').show();
+$('.show-my-completed').show();
+
 
 };
 

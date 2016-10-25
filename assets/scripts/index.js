@@ -50,6 +50,7 @@ $(() => {
   // entriesEvents.onCompleteEntries();
 
   $('.get-show').hide();
+  $('.show-my-completed').hide();
   $('.entries-container').html(viewLanding());
 
 
